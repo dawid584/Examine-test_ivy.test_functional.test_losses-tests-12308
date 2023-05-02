@@ -1,0 +1,17 @@
+Ensure a comprehensive examination of all tests to confirm their alignment with the current test writing policy. Ensure the tests follow the following guidelines, among others:
+
+Avoid restricting the use of get_dtypes to specific kinds (float, int) unless absolutely necessary; the default value should be used when possible.
+Avoid the use of assume to bypass specific data types.
+Unless necessary, avoid restricting the generation of numbers with min_value or max_value. For example, it is acceptable to set a maximum value for the pad function if the pad_value value can halt the test.
+Ensure proper use of strategies.
+Verify that all tests are executed rather than skipped by test_values=False, unless the test logic is implemented within the test body itself.
+Confirm that testing is comprehensive and complete, meaning that all possible combinations of inputs are tested.
+Avoid manually setting test parameters, including native array flags, container flags, the number of positional arguments, etc.
+Ensure that no parameters are skipped during testing.
+Always refer to the documentation for Ivy Tests and Ivy Frontend Tests for complete test writing policy.
+
+If a test function does not require update, simply mark the function in the list as completed, otherwise create an issue for that test function.
+
+ test_cross_entropy
+ test_binary_cross_entropy
+ test_sparse_cross_entropy
